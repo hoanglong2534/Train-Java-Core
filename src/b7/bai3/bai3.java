@@ -14,11 +14,12 @@ package b7.bai3;
 
 import java.util.Scanner;
 
-public class bai3 {
+public class Bai3 {
 
-        static long canh1, canh2, canh3;
-    public static void nhap() throws InvalidTriangleException {
+
+    public static Triangle nhap() throws InvalidTriangleException {
         Scanner sc = new Scanner(System.in);
+        Long canh1, canh2, canh3;
         System.out.print("nhap chieu dai canh 1: ");
         canh1 = sc.nextLong();
         System.out.print("nhap chieu dai canh 2: ");
@@ -32,16 +33,19 @@ public class bai3 {
         if(canh1 > Integer.MAX_VALUE || canh2 > Integer.MAX_VALUE || canh3 > Integer.MAX_VALUE) {
             throw new InvalidTriangleException("Canh phai nam trong gioi han Integer!");
         }
+        Triangle t = new Triangle(canh1, canh2, canh3);
+        return t;
     }
 
     public static void main(String[] args) {
 
         try {
-            nhap();
-            Triangle triangle = new Triangle(canh1, canh2, canh3);
+            Triangle triangle = nhap();
             System.out.println("Cac canh tam giac vua nhap:");
             System.out.println(triangle.getCanh1() + " " + triangle.getCanh2() + " " + triangle.getCanh3());
         } catch (InvalidTriangleException e) {
+            System.out.println(e.getMessage());
+        } catch (Exception e) {
             System.out.println(e.getMessage());
         }
 
