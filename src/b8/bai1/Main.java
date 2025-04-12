@@ -13,10 +13,9 @@ Bài tập 1: Viết chương trình thực hiện các yêu cầu sau:
 
 package b8.bai1;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Scanner;
+import org.w3c.dom.ls.LSOutput;
+
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -24,7 +23,7 @@ public class Main {
 
         //1
         List<String> a = new ArrayList<String>();
-
+        System.out.println("Nhap cac ngay trong tuan: ");
         for(int i = 1 ; i <= 7 ; i++){
             String day = sc.nextLine();
             a.add(day);
@@ -33,9 +32,43 @@ public class Main {
         //2
          //Cach1: Iterator
         Iterator<String> it = a.iterator();
+        System.out.print("Iterator: ");
         while(it.hasNext()){
             System.out.print(it.next() + " ");
         }
+        System.out.println();
+            // cach2: List Iterator
+        ListIterator<String> lit = a.listIterator();
+        System.out.print("ListIterator: ");
+        while(lit.hasNext()){
+            System.out.print(lit.next() + " ");
+        }
 
+        //3
+        System.out.println();
+        System.out.println("Nhap vi tri phan tu muon thay doi: ");
+        int pos = sc.nextInt();
+        System.out.println("Thay doi phan tu thanh: ");
+        sc.nextLine();
+        a.set(pos - 1, sc.nextLine());
+        System.out.println("List sau khi thay doi:");
+        for(String x : a){
+            System.out.print(x + " ");
+        }
+
+        //4
+        System.out.println();
+        a.remove(pos - 1);
+        System.out.println("Cac phan tu con lai:");
+        for(String x : a){
+            System.out.print(x + " ");
+        }
+
+        //5
+        System.out.println();
+        System.out.println("List khi duyet nguoc: ");
+        for(int i = a.size() - 1 ; i >= 0 ; i--){
+            System.out.print(a.get(i) + " ");
+        }
     }
 }
