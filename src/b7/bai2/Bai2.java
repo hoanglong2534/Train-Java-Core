@@ -8,13 +8,13 @@ package b7.bai2;
 
 import java.util.Scanner;
 
-public class bai2 {
+public class Bai2 {
 
     static int pos = -1;
 
     public static void nhap(int[] a, int n) throws Value100Exception {
         Scanner sc = new Scanner(System.in);
-        for (int i = 0; i < a.length; i++) {
+        for (int i = 0; i < n; i++) {
             a[i] = sc.nextInt();
             if (a[i] == 100) {
                 pos = i - 1;
