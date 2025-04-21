@@ -14,13 +14,12 @@ public class Main {
     public static void main(String[] args) {
 
         //luu inputBai1
-        List<String> input = new ArrayList<String>();
+        List<String> input = new ArrayList<>();
 
         try {
             BufferedReader reader = new BufferedReader(new FileReader("D:\\STUDY\\BE\\BTVN-k1\\src\\b9\\bai1\\inputBai1.txt"));
             String line = "";
             while ((line = reader.readLine()) != null) {
-              /*  System.out.println(line);*/
                 input.add(line);
             }
             reader.close();
@@ -48,8 +47,7 @@ public class Main {
                 Integer freqVal = freqMap.get(word);
                 freqVal++;
                 freqMap.put(word, freqVal);
-            }
-            else{
+            } else{
                 freqMap.put(word, 1);
             }
         }
